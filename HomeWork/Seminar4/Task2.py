@@ -1,21 +1,38 @@
-# Задание 2 Задайте последовательность чисел. Напишите программу, 
-# которая выведет список неповторяющихся элементов исходной последовательности.
+# Задание 2 Задайте натуральное число N. Напишите программу,
+# которая составит список простых множителей числа N.
 
-def view_uniq_elem_list (string_number):
-    list_number = string_number.split(' ')
-    print(list_number)
-    list_number_len = len(list_number)
-    counter_i = 0
-    while counter_i < list_number_len:
-        counter_j = counter_i + 1
-        while list_number.count(list_number[counter_i]) > 1:
-            if list_number[counter_i] == list_number[counter_j]:
-                list_number.pop(counter_j)
-                list_number_len -= 1
-            else:
-                counter_j+=1
-        counter_i+=1
-    print(list_number)
+def prime_numbers(number_max):
+    list_normal_number = list(range(2, number_max + 1))
+    list_cheked = list_normal_number.copy()
+    first = True
+    for i in list_cheked:
+        counter_j = 0
+        first = True
+        while counter_j < len(list_normal_number):
+            # print(list_normal_number)
+            # print(i)
+            # print(list_normal_number[counter_j])
+            # print(first)
+            if first == True and list_normal_number[counter_j] % i == 0:
+                first = False
+                counter_j += 1
+                continue
+            elif first == False and list_normal_number[counter_j] % i == 0:
+                list_normal_number.pop(counter_j)
+            counter_j += 1
+    return list_normal_number
+def prime_multipliers_number(number):  
+    list_prime_number = prime_numbers(number)
+    multipliers_number = []
+    for i in list_prime_number:
+        if number == i:
+            multipliers_number.append(i)
+            break
+        elif number % i == 0:
+            while number % i == 0:
+                number = number / i
+                multipliers_number.append(i)
+    return multipliers_number
 
-string_number = input('Введите последовательность чисел разделяя пробелом - ')
-view_uniq_elem_list(string_number)
+number = int(input('Введите число - '))
+print(prime_multipliers_number(number))
