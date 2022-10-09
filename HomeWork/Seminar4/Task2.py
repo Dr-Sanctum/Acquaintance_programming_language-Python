@@ -1,10 +1,9 @@
 # Задание 2 Задайте натуральное число N. Напишите программу,
 # которая составит список простых множителей числа N.
 
-def prime_numbers(number_max):
+def prime_numbers(number_max:int):
     list_normal_number = list(range(2, number_max + 1))
     list_cheked = list_normal_number.copy()
-    first = True
     for i in list_cheked:
         counter_j = 0
         first = True
