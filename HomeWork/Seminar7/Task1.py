@@ -24,5 +24,5 @@ class TrafficLight:
             sleep(i[1])
             
 
-a = TrafficLight
-a.running(a)
+a = TrafficLight()
+a.running()
