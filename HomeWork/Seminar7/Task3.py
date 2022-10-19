@@ -36,5 +36,4 @@ print(a)
 
 a.name = 'Петя'
 a.surname = 'Васечкин'
-a._income['wage'] = 1500
 print(a)

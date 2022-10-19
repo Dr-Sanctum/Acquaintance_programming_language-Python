@@ -15,14 +15,12 @@ from time import sleep
 
 
 class TrafficLight:
-    
-    __color = [('red',7), ('yelow', 2), ('green',5)]
+    __color = [('red', 7), ('yelow', 2), ('green', 5)]
 
     def running(self):
         for i in self.__color:
             print(i[0])
             sleep(i[1])
             
-
 a = TrafficLight()
 a.running()
