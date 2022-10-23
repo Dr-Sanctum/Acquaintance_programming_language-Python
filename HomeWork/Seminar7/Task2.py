@@ -23,7 +23,7 @@ class Road:
     mass_square_meter = 25
     thickness = 0.05
 
-    def Mass(self):
+    def mass(self):
         result = self._lenght * self._width * self.mass_square_meter * self.thickness
         print(f'Масса асфальта для параметров дороги: \n \
             Длина = {self._lenght} м\n \
@@ -34,4 +34,4 @@ class Road:
 
 
 a = Road(20,5000)
-a.Mass()
+a.mass()
