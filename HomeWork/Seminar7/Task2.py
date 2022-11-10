@@ -14,7 +14,7 @@ length (длина в метрах), width (ширина в метрах).
 
 
 class Road:
-    def __init__(self,lenght,width):
+    def __init__(self,lenght: int,width: int):
         self._lenght = lenght
         self._width = width
 
