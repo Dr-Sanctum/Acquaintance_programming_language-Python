@@ -3,7 +3,6 @@
 
 class NonNegative:
     """Этот класс поможет нам сделать атрибуты дескриптора"""
-    #новый питон
     def __set_name__(self, owner, my_attr):
         self.my_attr = my_attr
 
@@ -16,7 +15,6 @@ class NonNegative:
         
 class OnlyNumber:
     """Этот класс поможет нам сделать атрибуты дескриптора"""
-    #новый питон
     def __set_name__(self, owner, my_attr):
         self.my_attr = my_attr
 
