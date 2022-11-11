@@ -7,18 +7,12 @@ class NonNegative:
     def __set_name__(self, owner, my_attr):
         self.my_attr = my_attr
 
-    def __get__(self, instance, owner):
-        return instance.__dict__[self.my_attr]
-
     def __set__(self, instance, value):
         #instance - экземпляр нужного класса 
         # value присваемое значение
         if value< 0:
             raise ValueError ('Не может быть отрицательным')
         instance.__dict__[self.my_attr] = value
-
-    def __delete__(self, instance):
-        del instance.__dict__[self.my_attr]
         
 class OnlyNumber:
     """Этот класс поможет нам сделать атрибуты дескриптора"""
@@ -26,18 +20,12 @@ class OnlyNumber:
     def __set_name__(self, owner, my_attr):
         self.my_attr = my_attr
 
-    def __get__(self, instance, owner):
-        return instance.__dict__[self.my_attr]
-
     def __set__(self, instance, value: str):
         #instance - экземпляр нужного класса 
         # value присваемое значение
         if not value.isdigit():
             raise ValueError ('Должно быть положительным числом')
         instance.__dict__[self.my_attr] = value
-
-    def __delete__(self, instance):
-        del instance.__dict__[self.my_attr]
 
 class Road:
     _lenght = NonNegative()
